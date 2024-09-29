@@ -4,11 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Команда Monte</title>
-    <link rel="stylesheet" href="style.css"> <!-- Подключаем файл стилей -->
-</head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Супрун Галерея</title>
     <style>
         /* Общие стили */
@@ -232,13 +227,6 @@
         }
     </style>
 </head>
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Команда Monte</title>
-    <link rel="stylesheet" href="style.css"> <!-- Подключаем файл стилей -->
-</head>
-
 
 <body>
 
@@ -334,3 +322,156 @@
 </body>
 
 </html>
+
+<!-- Добавь этот div в HTML-код -->
+<div id="back-to-top" onclick="scrollToTop()">↑</div>
+
+<!-- CSS для кнопки -->
+<style>
+  #back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #00C896;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+
+  #back-to-top:hover {
+    background-color: #028a7e;
+  }
+</style>
+
+<!-- Скрипт для показа кнопки и прокрутки вверх -->
+<script>
+  window.onscroll = function() {toggleBackToTop()};
+
+  function toggleBackToTop() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      document.getElementById("back-to-top").style.display = "block";
+    } else {
+      document.getElementById("back-to-top").style.display = "none";
+    }
+  }
+
+  function scrollToTop() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+</script>
+
+<!-- Добавь этот div в HTML-код -->
+<div id="progress-bar"></div>
+
+<!-- Добавь этот код в CSS -->
+<style>
+  #progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background: linear-gradient(90deg, #00C896, #00D6F7);
+    z-index: 1000;
+  }
+</style>
+
+<!-- Добавь этот скрипт в конец HTML -->
+<script>
+  window.onscroll = function() {scrollProgress()};
+  function scrollProgress() {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("progress-bar").style.width = scrolled + "%";
+  }
+</script>
+
+<!-- Добавь кнопку для переключения темы -->
+<button id="theme-toggle">Темная тема</button>
+
+<!-- CSS для светлой и темной темы -->
+<style>
+  body {
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  body.dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+
+  #theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #00C896;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+
+  #theme-toggle.dark {
+    background-color: #028a7e;
+  }
+</style>
+
+<!-- Скрипт для переключения темы -->
+<script>
+  document.getElementById("theme-toggle").addEventListener("click", function() {
+    document.body.classList.toggle("dark-mode");
+    this.textContent = document.body.classList.contains("dark-mode") ? "Светлая тема" : "Темная тема";
+  });
+</script>
+
+<!-- Loader -->
+<div id="loader"></div>
+
+<style>
+  #loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: #00C896;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #loader::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 5px solid white;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<script>
+  window.addEventListener('load', function() {
+    document.getElementById('loader').style.display = 'none';
+  });
+</script>
