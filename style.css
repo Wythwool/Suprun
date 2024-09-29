@@ -241,3 +241,32 @@ footer p {
     margin: 0;
     font-size: 1.2em;
 }
+
+button {
+    background-color: #00C896;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #028a7e;
+    transform: scale(1.05);
+}
+
+.parallax {
+  background-image: url('your-image.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 3em;
+}
