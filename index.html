@@ -475,3 +475,72 @@
     document.getElementById('loader').style.display = 'none';
   });
 </script>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Сайт с секциями</title>
+  <style>
+    /* Основные стили */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+    }
+
+    /* Навигация */
+    nav {
+      background-color: #333;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+      font-size: 1.2em;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #00C896;
+    }
+
+    /* Стили для слайдов/секций */
+    .slide {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3em;
+      color: white;
+      text-align: center;
+    }
+
+    #section1 {
+      background-color: #3498db;
+    }
+
+    #section2 {
+      background-color: #e74c3c;
+    }
+
+    #section3 {
+      background-color: #f1c40f;
+    }
+
+    #section4 {
+      background-color: #2ecc71;
+    }
+
+  </style>
+</head>
+<body>
+
